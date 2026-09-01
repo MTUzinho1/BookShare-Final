@@ -17,16 +17,7 @@
   <meta name="description" content="BookShare — sistema completo de gestão para biblioteca escolar.">
 
   <title>BookShare | Gestão de Biblioteca Escolar</title>
-
- 
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700;7..72,800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=20260901-v2full-simple-login">
+<link rel="stylesheet" href="style.css?v=20260901-final">
 
 </head>
 
@@ -56,77 +47,67 @@
 
  
 
-  <section id="auth-view" class="auth-view auth-view--simple is-hidden">
-    <main class="simple-login">
-      <div class="simple-login__brand" aria-label="BookShare">
-        <span class="simple-login__mark" aria-hidden="true">BS</span>
-        <div>
-          <strong>BookShare</strong>
-          <span>Gestão de Biblioteca Escolar</span>
-        </div>
-      </div>
-
-      <section class="simple-login__card" aria-labelledby="login-title">
-        <div class="simple-login__heading">
-          <span class="simple-login__welcome">Bem-vinda</span>
-          <h1 id="login-title">Entre na biblioteca</h1>
-          <p>Use seu e-mail e sua senha para acessar o sistema.</p>
+  <section id="auth-view" class="auth-view auth-view--clean is-hidden">
+    <main class="login-shell" aria-labelledby="login-title">
+      <section class="login-intro" aria-label="Apresentação do BookShare">
+        <div class="login-brand">
+          <span class="login-brand__mark" aria-hidden="true">BS</span>
+          <div>
+            <strong>BookShare</strong>
+            <small>Gestão de Biblioteca Escolar</small>
+          </div>
         </div>
 
-        <form id="login-form" class="simple-login__form" novalidate>
-          <label class="field simple-login__field">
-            <span class="field__label">E-mail</span>
-            <span class="input-shell simple-login__input">
-              <span class="input-shell__icon" aria-hidden="true">@</span>
-              <input
-                id="login-email"
-                name="email"
-                type="email"
-                autocomplete="username"
-                placeholder="Digite seu e-mail"
-                required
-              >
-            </span>
-            <small class="field__error"></small>
-          </label>
-
-          <label class="field simple-login__field">
-            <span class="field__label">Senha</span>
-            <span class="input-shell simple-login__input">
-              <span class="input-shell__icon" aria-hidden="true">●</span>
-              <input
-                id="login-password"
-                name="password"
-                type="password"
-                autocomplete="current-password"
-                placeholder="Digite sua senha"
-                minlength="6"
-                required
-              >
-              <button id="toggle-password" class="input-shell__action" type="button" aria-label="Mostrar ou ocultar senha">Mostrar</button>
-            </span>
-            <small class="field__error"></small>
-          </label>
-
-          <button id="login-submit" class="button button--primary button--large button--block simple-login__submit" type="submit">
-            <span>Entrar</span>
-            <span aria-hidden="true">→</span>
-          </button>
-        </form>
-
-        <div class="simple-login__help">
-          <strong>Não consegue entrar?</strong>
-          <span>Peça ao administrador da escola para conferir sua conta ou redefinir sua senha.</span>
+        <div class="login-intro__content">
+          <span class="login-kicker">Biblioteca escolar</span>
+          <h1>Sua biblioteca, organizada de forma simples.</h1>
+          <p>Encontre alunos e livros, registre empréstimos e acompanhe devoluções em poucos passos.</p>
+          <div class="login-benefits" aria-label="Funções principais">
+            <span><i>✓</i> Empréstimos e devoluções rápidas</span>
+            <span><i>✓</i> Consulta de alunos e livros</span>
+            <span><i>✓</i> Avisos de atrasos e reservas</span>
+          </div>
         </div>
       </section>
 
-      <div class="simple-login__features" aria-label="Principais funções do BookShare">
-        <span><b>1</b> Emprestar e devolver livros</span>
-        <span><b>2</b> Consultar alunos e acervo</span>
-        <span><b>3</b> Acompanhar atrasos e reservas</span>
-      </div>
+      <section class="login-panel">
+        <div class="login-panel__mobile-brand" aria-hidden="true">
+          <span>BS</span><strong>BookShare</strong>
+        </div>
+        <header class="login-panel__heading">
+          <span>BookShare</span>
+          <h2 id="login-title">Entrar na biblioteca</h2>
+          <p>Use seu e-mail e sua senha para acessar.</p>
+        </header>
 
-      <footer class="simple-login__footer">BookShare • Biblioteca Escolar</footer>
+        <form id="login-form" class="login-form" novalidate>
+          <label class="login-field">
+            <span>E-mail</span>
+            <div class="login-input-wrap">
+              <b aria-hidden="true">@</b>
+              <input id="login-email" name="email" type="email" autocomplete="username" placeholder="seuemail@escola.com" required>
+            </div>
+            <small class="field__error"></small>
+          </label>
+
+          <label class="login-field">
+            <span>Senha</span>
+            <div class="login-input-wrap">
+              <b aria-hidden="true">●</b>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" minlength="6" required>
+              <button id="toggle-password" type="button" class="login-show-password">Mostrar</button>
+            </div>
+            <small class="field__error"></small>
+          </label>
+
+          <button id="login-submit" class="login-submit" type="submit">
+            <span>Entrar</span><span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <p class="login-help">Não consegue entrar? Fale com o administrador da escola.</p>
+        <div id="api-connection-hint" class="api-connection-hint is-hidden"></div>
+      </section>
     </main>
   </section>
 

@@ -2336,3 +2336,126 @@ END
 $$;
 
 COMMIT;
+-- ==========================================================================
+-- BOOKSHARE V2 FULL — MASSA DE DEMONSTRAÇÃO PARA O TCC
+-- Mantém os registros já existentes e completa a base até 400 alunos.
+-- Os livros reais adicionais são importados pelo server.js (Google Books)
+-- somente quando o catálogo estiver abaixo do alvo definido no Render.
+-- ==========================================================================
+
+BEGIN;
+
+INSERT INTO schools (name, code, address, contact_email, phone, active)
+VALUES
+  ('Escola Municipal Monte Verde', 'EM-MONTE-VERDE', 'Rua das Acácias, 120', 'biblioteca.monteverde@escola.local', '(41) 3333-2101', TRUE),
+  ('Colégio Estadual Vila Nova', 'CE-VILA-NOVA', 'Avenida das Nações, 845', 'biblioteca.vilanova@escola.local', '(41) 3333-2102', TRUE),
+  ('Escola Municipal Paulo Freire', 'EM-PAULO-FREIRE', 'Rua do Saber, 77', 'biblioteca.paulofreire@escola.local', '(41) 3333-2103', TRUE),
+  ('Colégio Estadual Jardim das Flores', 'CE-JARDIM-FLORES', 'Alameda das Flores, 410', 'biblioteca.jardimflores@escola.local', '(41) 3333-2104', TRUE)
+ON CONFLICT (code) DO UPDATE SET
+  name = EXCLUDED.name,
+  address = EXCLUDED.address,
+  contact_email = EXCLUDED.contact_email,
+  phone = EXCLUDED.phone,
+  active = TRUE,
+  updated_at = NOW();
+
+-- Completa exatamente até 400 alunos ativos para a apresentação.
+-- Usa as turmas já cadastradas da escola principal, sem criar centenas de INSERTs.
+WITH principal_school AS (
+  SELECT id
+  FROM schools
+  WHERE code = 'PRINCIPAL'
+  LIMIT 1
+),
+active_classes AS (
+  SELECT
+    c.id,
+    ROW_NUMBER() OVER (ORDER BY c.school_year DESC, c.name, c.shift) AS rn,
+    COUNT(*) OVER () AS total_classes
+  FROM classes c
+  JOIN principal_school ps ON c.school_id = ps.id
+  WHERE c.active = TRUE
+),
+current_students AS (
+  SELECT COUNT(*)::INT AS total
+  FROM students
+),
+sequence AS (
+  SELECT generate_series(total + 1, 400) AS n
+  FROM current_students
+),
+prepared AS (
+  SELECT
+    seq.n,
+    ac.id AS class_id,
+    ps.id AS school_id,
+    (ARRAY[
+      'Ana','Beatriz','Camila','Carolina','Clara','Eduarda','Elisa','Fernanda','Gabriela','Helena',
+      'Isabela','Júlia','Larissa','Laura','Letícia','Lívia','Luana','Mariana','Melissa','Natália',
+      'Arthur','Bernardo','Bruno','Caio','Davi','Enzo','Felipe','Gabriel','Guilherme','Gustavo',
+      'Henrique','João','Leonardo','Lucas','Mateus','Miguel','Pedro','Rafael','Samuel','Vinícius'
+    ])[1 + ((seq.n - 1) % 40)] AS first_name,
+    (ARRAY[
+      'Almeida','Alves','Barbosa','Cardoso','Carvalho','Costa','Ferreira','Gomes','Lima','Martins',
+      'Mendes','Monteiro','Moreira','Nascimento','Oliveira','Pereira','Ribeiro','Rocha','Rodrigues','Santos',
+      'Silva','Soares','Souza','Teixeira','Vieira'
+    ])[1 + ((seq.n * 7 - 1) % 25)] AS last_name_1,
+    (ARRAY[
+      'Almeida','Barros','Batista','Campos','Correia','Dias','Duarte','Freitas','Macedo','Machado',
+      'Marques','Melo','Moraes','Nunes','Pires','Ramos','Reis','Rezende','Sales','Tavares'
+    ])[1 + ((seq.n * 11 - 1) % 20)] AS last_name_2
+  FROM sequence seq
+  CROSS JOIN principal_school ps
+  JOIN active_classes ac
+    ON ac.rn = 1 + ((seq.n - 1) % ac.total_classes)
+)
+INSERT INTO students (
+  full_name,
+  registration_number,
+  class_id,
+  roll_number,
+  guardian_contact,
+  notes,
+  active,
+  school_id
+)
+SELECT
+  first_name || ' ' || last_name_1 || ' ' || last_name_2,
+  'BS2026-' || LPAD(n::TEXT, 4, '0'),
+  class_id,
+  1 + ((n - 1) % 40),
+  '(41) 9' || LPAD((10000000 + ((n * 7919) % 89999999))::TEXT, 8, '0'),
+  CASE
+    WHEN n % 17 = 0 THEN 'Participa do clube de leitura.'
+    WHEN n % 13 = 0 THEN 'Responsável prefere contato por telefone.'
+    WHEN n % 11 = 0 THEN 'Aluno frequente da biblioteca.'
+    ELSE 'Aluno de demonstração BookShare V2.'
+  END,
+  TRUE,
+  school_id
+FROM prepared
+ON CONFLICT (registration_number) DO NOTHING;
+
+-- Garante índices adequados para centenas de alunos e catálogo grande.
+CREATE INDEX IF NOT EXISTS students_school_active_name_idx
+  ON students (school_id, active, LOWER(full_name));
+
+CREATE INDEX IF NOT EXISTS students_registration_search_idx
+  ON students (LOWER(registration_number));
+
+CREATE INDEX IF NOT EXISTS books_school_active_title_idx
+  ON books (school_id, active, LOWER(title));
+
+CREATE INDEX IF NOT EXISTS books_author_search_idx
+  ON books (LOWER(author));
+
+CREATE INDEX IF NOT EXISTS book_copies_book_status_idx
+  ON book_copies (book_id, status);
+
+CREATE INDEX IF NOT EXISTS loans_student_status_due_idx
+  ON loans (student_id, status, due_date);
+
+CREATE INDEX IF NOT EXISTS reservations_book_status_created_idx
+  ON reservations (book_id, status, created_at);
+
+COMMIT;

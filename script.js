@@ -1,12 +1,29 @@
 "use strict";
 
-// =============================================================================
-// BookShare V2 Full — Frontend
-// Interface simples, direta e completa para a rotina da biblioteca escolar.
-// =============================================================================
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+let API_BASE_URL = location.hostname.endsWith("onrender.com") ? "" : "https://tcc2026.onrender.com";
+
+function normalizeApiBase(value) {
+  return String(value || "").trim().replace(/\/+$/, "");
+}
+
+async function loadApiConfig() {
+  try {
+    const response = await fetch(`config.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return;
+    const config = await response.json();
+    API_BASE_URL = normalizeApiBase(config.apiBaseUrl);
+  } catch (_error) {
+  }
+}
+
+function apiUrl(path) {
+  if (/^https?:\/\//i.test(path)) return path;
+  return `${API_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
 
 const state = {
   token: localStorage.getItem("bookshare_token") || "",
@@ -149,7 +166,7 @@ async function api(path, options = {}) {
     body = JSON.stringify(body);
   }
 
-  const response = await fetch(path, {
+  const response = await fetch(apiUrl(path), {
     method: options.method || "GET",
     headers,
     body,
@@ -251,7 +268,6 @@ function applyRoleUI() {
     node.classList.toggle("is-hidden", !roleIsLibrarian());
   });
 
-  // Cadastrar e editar livro/aluno faz parte da rotina da bibliotecária na V2.
   $$("[data-librarian-manage]").forEach(node => node.classList.remove("is-hidden"));
 }
 
@@ -486,9 +502,6 @@ function closeSidebar() {
   $("#sidebar-overlay")?.classList.remove("is-visible");
 }
 
-// =============================================================================
-// Dashboard
-// =============================================================================
 
 async function loadDashboard() {
   const payload = await api("/api/dashboard");
@@ -613,9 +626,6 @@ function renderCirculation(items) {
   context.stroke();
 }
 
-// =============================================================================
-// Notificações
-// =============================================================================
 
 async function loadNotifications() {
   if (!state.token || !roleIsLibrarian()) {
@@ -647,9 +657,6 @@ function toggleNotificationPanel(force) {
   if (open) loadNotifications().catch(error => toast(error.message, "error"));
 }
 
-// =============================================================================
-// Atendimento rápido
-// =============================================================================
 
 async function loadService() {
   if (!state.caches.students.length) await fetchStudents();
@@ -716,9 +723,6 @@ function renderServiceStudent(payload) {
   $('[data-service-action="edit"]', container).onclick = () => openStudentEdit(student.id);
 }
 
-// =============================================================================
-// Alunos
-// =============================================================================
 
 async function fetchStudents(force = false) {
   if (state.caches.students.length && !force) return state.caches.students;
@@ -883,9 +887,6 @@ function handleStudentPhotoFile(event) {
   reader.readAsDataURL(file);
 }
 
-// =============================================================================
-// Livros e exemplares
-// =============================================================================
 
 async function fetchBooks(force = false) {
   if (state.caches.books.length && !force) return state.caches.books;
@@ -1096,9 +1097,6 @@ async function syncBookCovers() {
   }
 }
 
-// =============================================================================
-// Empréstimos / devoluções / renovação
-// =============================================================================
 
 async function fetchLoans(force = false) {
   if (state.caches.loans.length && !force) return state.caches.loans;
@@ -1267,9 +1265,6 @@ async function renewLoan(id) {
   }
 }
 
-// =============================================================================
-// Pendências / cobrança
-// =============================================================================
 
 async function loadPending() {
   const payload = await api("/api/pending");
@@ -1355,9 +1350,6 @@ async function saveNotice(event) {
   }
 }
 
-// =============================================================================
-// Reservas
-// =============================================================================
 
 async function loadReservations() {
   const payload = await api("/api/reservations");
@@ -1428,9 +1420,6 @@ async function cancelReservation(id) {
   }
 }
 
-// =============================================================================
-// Turmas
-// =============================================================================
 
 async function loadClasses(force = false) {
   if (!state.caches.classes.length || force) {
@@ -1489,9 +1478,6 @@ async function saveClass(event) {
   }
 }
 
-// =============================================================================
-// Escolas e usuários
-// =============================================================================
 
 async function loadSchools(force = false) {
   if (!roleIsAdmin()) return;
@@ -1585,9 +1571,6 @@ async function saveUser(event) {
   }
 }
 
-// =============================================================================
-// Relatórios e histórico
-// =============================================================================
 
 async function loadReports() {
   const start = $("#report-start-date")?.value || "";
@@ -1643,9 +1626,6 @@ function renderActivities() {
   container.innerHTML = items.slice(0, 150).map(item => `<div class="activity-item"><span class="activity-item__icon">◷</span><div><strong>${escapeHTML(item.user_name || "Sistema")}</strong><p>${escapeHTML(item.action)} · ${escapeHTML(item.entity_type || "registro")}</p><small>${formatDateTime(item.created_at)}</small></div></div>`).join("");
 }
 
-// =============================================================================
-// Configurações / perfil
-// =============================================================================
 
 async function loadSettings() {
   const payload = await api("/api/settings");
@@ -1731,9 +1711,6 @@ function handleProfilePhoto(event) {
   reader.readAsDataURL(file);
 }
 
-// =============================================================================
-// Busca global
-// =============================================================================
 
 async function globalSearch() {
   const input = $("#global-search-input");
@@ -1754,9 +1731,6 @@ async function globalSearch() {
   $$('[data-global-book]', box).forEach(button => button.onclick = () => { box.classList.add("is-hidden"); openBookDetails(button.dataset.globalBook); });
 }
 
-// =============================================================================
-// Exportações simples
-// =============================================================================
 
 function downloadCSV(filename, headers, rows) {
   const escapeCell = value => `"${String(value ?? "").replaceAll('"', '""')}"`;
@@ -1785,9 +1759,6 @@ function exportLoans() {
   downloadCSV("bookshare-emprestimos.csv", ["Aluno", "Turma", "Livro", "Patrimônio", "Empréstimo", "Prazo", "Situação"], items.map(item => [item.student_name, item.class_name, item.book_title, item.inventory_code, item.loan_date, item.due_date, item.status]));
 }
 
-// =============================================================================
-// Eventos
-// =============================================================================
 
 function bindModalButtons() {
   $$('[data-open-modal]').forEach(button => {
@@ -1966,8 +1937,18 @@ async function boot() {
   bindPasswordToggle();
   bindKeyboard();
   setupInitialBookView();
+  await loadApiConfig();
 
-  // Pequeno tempo mínimo para preservar a animação temática sem atrasar o app.
+  const apiHint = $("#api-connection-hint");
+  if (!API_BASE_URL && !["localhost", "127.0.0.1"].includes(location.hostname) && !location.hostname.endsWith(".onrender.com")) {
+    if (apiHint) {
+      apiHint.textContent = "A API ainda não foi configurada. Coloque o endereço do Render no arquivo config.json.";
+      apiHint.classList.remove("is-hidden");
+    }
+  } else if (apiHint) {
+    apiHint.classList.add("is-hidden");
+  }
+
   const started = performance.now();
   await restoreSession();
   const elapsed = performance.now() - started;

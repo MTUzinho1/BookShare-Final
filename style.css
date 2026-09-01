@@ -9425,7 +9425,7 @@ p {
 
  
 
-/* Hero literário atualizado */
+
 
 .showcase-library--books {
 
@@ -9767,7 +9767,7 @@ p {
 
  
 
-/* BookShare V5 — experiência por perfil */
+
 
 .showcase-library--covers {
 
@@ -10161,11 +10161,7 @@ p {
 
  
 
-/* ============================================================
 
-   BOOKSHARE V6 — visual refinado, perfis e imagens reais
-
-   ============================================================ */
 
 :root {
 
@@ -10333,7 +10329,7 @@ p {
 
  
 
-/* Catálogo */
+
 
 #view-livros .page-actions {
 
@@ -10387,7 +10383,7 @@ p {
 
  
 
-/* Pessoas e alunos */
+
 
 .card-identity__avatar,
 
@@ -10499,7 +10495,7 @@ p {
 
  
 
-/* Turmas simplificadas */
+
 
 .class-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
 
@@ -10509,7 +10505,7 @@ p {
 
  
 
-/* Dashboard da bibliotecária */
+
 
 .librarian-home__intro {
 
@@ -10537,7 +10533,7 @@ p {
 
  
 
-/* Admin claramente separado */
+
 
 .role-admin {
 
@@ -10693,11 +10689,7 @@ p {
 
  
 
-/* ==============================================================
 
-   BOOKSHARE V8 — identidade exclusiva para biblioteca pública
-
-   ============================================================= */
 
 :root {
 
@@ -10731,7 +10723,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Login completamente diferente: editorial e funcional */
+
 
 .auth-view {
 
@@ -10907,7 +10899,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Aplicativo: navegação pública, limpa e sem aspecto de curso */
+
 
 .app-shell { background: #f3f2ee; }
 
@@ -10983,7 +10975,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Balcão: somente o necessário */
+
 
 .librarian-desk { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(520px, .95fr); gap: 20px; padding: 0; background: transparent; border: 0; box-shadow: none; }
 
@@ -11053,7 +11045,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Admin: central realmente diferente */
+
 
 .role-admin .sidebar { background: #17243b; color: #fff; border-right: 0; }
 
@@ -11125,7 +11117,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Catálogo com capas em destaque */
+
 
 .book-grid { gap: 18px; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); }
 
@@ -11151,7 +11143,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Fotos de alunos em todos os pontos */
+
 
 .student-avatar, .search-result__avatar, .table-avatar, .detail-avatar { border-radius: 50%; overflow: hidden; background: #e4ebe8; }
 
@@ -11159,7 +11151,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Perfil e configurações com aparência de ficha funcional */
+
 
 .profile-editor { padding: 22px; background: #fffdfa; border: 1px solid var(--v8-line); border-radius: 20px; box-shadow: var(--v8-shadow-soft); }
 
@@ -11243,7 +11235,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Ajustes V9: painel enxuto, perfil e capas */
+
 
 .role-librarian .dashboard-layout { grid-template-columns: 1fr; }
 
@@ -11273,7 +11265,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* V10 — mosaico apenas com capas, sem cartão informativo */
+
 
 .real-cover-collage {
 
@@ -11395,7 +11387,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* V11 — correção exclusiva das capas */
+
 
 .real-cover {
 
@@ -11463,7 +11455,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* V13 — ajuste somente do tamanho e disposição das capas da abertura */
+
 
 .showcase-library--real-covers {
 
@@ -11623,7 +11615,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* V14 — ilustração calma e funcional para a abertura */
+
 
 .showcase-library--calm {
 
@@ -11817,11 +11809,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* ================================================================
 
-   BOOKSHARE V29 — PERFIS SEPARADOS
-
-   ================================================================ */
 
  
 
@@ -12619,11 +12607,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* ================================================================
 
-   BOOKSHARE V30 — INTERFACE FINAL
-
-   ================================================================ */
 
  
 
@@ -12701,7 +12685,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Bibliotecária */
+
 
 .librarian-overview {
 
@@ -13065,7 +13049,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Administração */
+
 
 .admin-overview {
 
@@ -13397,7 +13381,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Capas */
+
 
 .book-card__cover,
 
@@ -13543,7 +13527,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* ===== Ajustes finais V32 ===== */
+
 
 .role-admin .librarian-only { display: none !important; }
 
@@ -13861,15 +13845,11 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* ================================================================
 
-   BOOKSHARE V34 — INÍCIOS CORRIGIDOS E RESPONSIVOS
-
-   ================================================================ */
 
  
 
-/* Evita que estilos antigos transformem o painel em colunas estreitas. */
+
 
 .librarian-home.librarian-desk.librarian-overview,
 
@@ -13895,7 +13875,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* ---------- Bibliotecária ---------- */
+
 
 .librarian-home.librarian-desk.librarian-overview {
 
@@ -14319,7 +14299,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* ---------- Administrador ---------- */
+
 
 .admin-home.admin-overview {
 
@@ -14675,7 +14655,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* Impede qualquer rolagem horizontal criada pelos antigos cards. */
+
 
 #view-dashboard,
 
@@ -14749,7 +14729,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
  
 
-/* BOOKSHARE V35 — LOGIN LIMPO E 50 CAPAS REAIS */
+
 
 .auth-showcase__compact-notes { display: none !important; }
 
@@ -14783,7 +14763,7 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 
 @media (max-width:840px){.auth-library-panel{grid-template-columns:1fr}.auth-library-panel__copy{padding:0 8px 8px}}
 
-/* BOOKSHARE V36 — separação rígida dos perfis */
+
 [hidden] {
   display: none !important;
 }
@@ -14811,11 +14791,11 @@ body { background: #f2f1ed; color: var(--v8-ink); }
 .app-shell.role-librarian .librarian-only-nav:not(.is-hidden) {
   visibility: visible;
 }
-/* ========================================================================== */
-/* BOOKSHARE V2 FULL — CAMADA FINAL DE USABILIDADE                           */
-/* Público principal: equipe de biblioteca escolar.                          */
-/* Prioridades: leitura fácil, ações óbvias, contraste, espaço e rapidez.     */
-/* ========================================================================== */
+
+
+
+
+
 
 :root {
   --v2-bg: #f6f7f4;
@@ -14898,7 +14878,7 @@ textarea {
   box-shadow: var(--v2-shadow);
 }
 
-/* Ações do painel inicial mais fáceis de reconhecer. */
+
 .librarian-overview__actions,
 .quick-action-grid {
   gap: 14px;
@@ -14921,7 +14901,7 @@ textarea {
   line-height: 1.4;
 }
 
-/* Cards gerados pelo novo script. */
+
 .card-actions,
 .detail-actions,
 .table-actions {
@@ -15446,3 +15426,350 @@ textarea {
     flex-basis: 100%;
   }
 }
+
+
+.auth-view.auth-view--simple {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(42, 112, 95, .10), transparent 28%),
+    radial-gradient(circle at 88% 88%, rgba(205, 158, 75, .10), transparent 26%),
+    #f5f6f3;
+}
+
+.auth-view.auth-view--simple.is-hidden { display: none !important; }
+
+.simple-login {
+  width: min(100%, 520px);
+  display: grid;
+  gap: 22px;
+}
+
+.simple-login__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #173f3a;
+}
+
+.simple-login__mark {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #1f685c;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  box-shadow: 0 8px 18px rgba(31, 104, 92, .18);
+}
+
+.simple-login__brand > div {
+  display: grid;
+  gap: 1px;
+}
+
+.simple-login__brand strong {
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.simple-login__brand span:last-child {
+  color: #66736f;
+  font-size: .92rem;
+}
+
+.simple-login__card {
+  padding: 36px;
+  border: 1px solid #dde4e0;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(35, 58, 51, .09);
+}
+
+.simple-login__heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.simple-login__welcome {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #39776c;
+  font-size: .83rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.simple-login__heading h1 {
+  margin: 0;
+  color: #183a35;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.8rem, 6vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+
+.simple-login__heading p {
+  max-width: 390px;
+  margin: 10px auto 0;
+  color: #65706d;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.simple-login__form {
+  display: grid;
+  gap: 18px;
+}
+
+.simple-login__field {
+  gap: 8px;
+}
+
+.simple-login__field .field__label {
+  color: #283d38;
+  font-size: .95rem;
+  font-weight: 750;
+}
+
+.simple-login__input {
+  min-height: 56px;
+  border: 1.5px solid #ccd7d2;
+  border-radius: 14px;
+  background: #fbfcfb;
+  box-shadow: none;
+}
+
+.simple-login__input:focus-within {
+  border-color: #2b7567;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(43, 117, 103, .10);
+}
+
+.simple-login__input input {
+  min-height: 54px;
+  font-size: 1rem;
+}
+
+.simple-login__input input::placeholder { color: #9aa5a1; }
+
+.simple-login__input .input-shell__icon {
+  color: #47756c;
+  font-weight: 800;
+}
+
+.simple-login__input .input-shell__action {
+  color: #28685d;
+  font-weight: 800;
+}
+
+.simple-login__submit {
+  min-height: 58px;
+  margin-top: 2px;
+  border-radius: 14px;
+  font-size: 1.03rem;
+  font-weight: 800;
+}
+
+.simple-login__help {
+  margin-top: 22px;
+  padding: 15px 16px;
+  display: grid;
+  gap: 4px;
+  border-radius: 13px;
+  background: #f3f7f5;
+  color: #52615d;
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.simple-login__help strong { color: #31564e; }
+
+.simple-login__features {
+  display: grid;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.simple-login__features span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #58645f;
+  font-size: .9rem;
+}
+
+.simple-login__features b {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e3efeb;
+  color: #21675a;
+  font-size: .76rem;
+}
+
+.simple-login__footer {
+  color: #84908c;
+  text-align: center;
+  font-size: .8rem;
+}
+
+@media (max-width: 560px) {
+  .auth-view.auth-view--simple { padding: 22px 14px; align-items: start; }
+  .simple-login { gap: 18px; }
+  .simple-login__brand { justify-content: flex-start; padding: 4px 4px 0; }
+  .simple-login__card { padding: 26px 20px; border-radius: 20px; }
+  .simple-login__heading { margin-bottom: 23px; text-align: left; }
+  .simple-login__heading p { margin-left: 0; margin-right: 0; }
+  .simple-login__features { padding: 0 4px; }
+}
+
+
+.auth-view.auth-view--clean {
+  min-height: 100vh !important;
+  width: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 28px !important;
+  background: #f3f5f1 !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+}
+.auth-view.auth-view--clean.is-hidden { display: none !important; }
+.login-shell {
+  width: min(100%, 940px) !important;
+  min-height: 570px !important;
+  display: grid !important;
+  grid-template-columns: .92fr 1.08fr !important;
+  overflow: hidden !important;
+  border: 1px solid #dce4df !important;
+  border-radius: 30px !important;
+  background: #fff !important;
+  box-shadow: 0 28px 70px rgba(28, 55, 47, .13) !important;
+}
+.login-intro {
+  min-width: 0 !important;
+  padding: 42px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(241, 207, 142, .22), transparent 27%),
+    linear-gradient(145deg, #173f3a 0%, #225e54 100%) !important;
+}
+.login-brand { display: flex !important; align-items: center !important; gap: 12px !important; }
+.login-brand__mark {
+  width: 48px !important; height: 48px !important; display: grid !important; place-items: center !important;
+  border-radius: 14px !important; background: #f1cf8e !important; color: #173f3a !important;
+  font-size: 1rem !important; font-weight: 900 !important;
+}
+.login-brand > div { display: grid !important; gap: 1px !important; }
+.login-brand strong { color: #fff !important; font-family: "Literata", Georgia, serif !important; font-size: 1.35rem !important; }
+.login-brand small { color: rgba(255,255,255,.72) !important; font-size: .82rem !important; }
+.login-intro__content { max-width: 360px !important; }
+.login-kicker { display: inline-block !important; margin-bottom: 12px !important; color: #f1cf8e !important; font-size: .78rem !important; font-weight: 800 !important; letter-spacing: .09em !important; text-transform: uppercase !important; }
+.login-intro h1 { margin: 0 !important; color: #fff !important; font-family: "Literata", Georgia, serif !important; font-size: clamp(2rem, 4vw, 3rem) !important; line-height: 1.08 !important; letter-spacing: -.035em !important; }
+.login-intro p { margin: 16px 0 0 !important; color: rgba(255,255,255,.78) !important; font-size: 1rem !important; line-height: 1.6 !important; }
+.login-benefits { margin-top: 28px !important; display: grid !important; gap: 12px !important; }
+.login-benefits span { display: flex !important; align-items: center !important; gap: 9px !important; color: rgba(255,255,255,.88) !important; font-size: .9rem !important; }
+.login-benefits i { width: 23px !important; height: 23px !important; display: grid !important; place-items: center !important; border-radius: 50% !important; background: rgba(255,255,255,.12) !important; color: #f1cf8e !important; font-style: normal !important; font-size: .75rem !important; }
+.login-panel { min-width: 0 !important; padding: 58px 62px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; background: #fff !important; }
+.login-panel__mobile-brand { display: none !important; }
+.login-panel__heading > span { color: #39776c !important; font-size: .78rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: .08em !important; }
+.login-panel__heading h2 { margin: 7px 0 0 !important; color: #193a35 !important; font-family: "DM Sans", sans-serif !important; font-size: 2.25rem !important; line-height: 1.1 !important; letter-spacing: -.035em !important; }
+.login-panel__heading p { margin: 9px 0 0 !important; color: #68736f !important; font-size: .96rem !important; }
+.login-form { margin-top: 31px !important; display: grid !important; gap: 18px !important; }
+.login-field { display: grid !important; gap: 8px !important; }
+.login-field > span { color: #29413b !important; font-size: .9rem !important; font-weight: 800 !important; }
+.login-input-wrap { min-height: 56px !important; display: flex !important; align-items: center !important; overflow: hidden !important; border: 1.5px solid #ccd7d2 !important; border-radius: 14px !important; background: #fbfcfb !important; transition: .18s ease !important; }
+.login-input-wrap:focus-within { border-color: #2c7668 !important; background: #fff !important; box-shadow: 0 0 0 4px rgba(44,118,104,.1) !important; }
+.login-input-wrap b { width: 48px !important; flex: 0 0 48px !important; display: grid !important; place-items: center !important; color: #6a8b83 !important; font-size: .9rem !important; }
+.login-input-wrap input { width: 100% !important; min-width: 0 !important; height: 54px !important; padding: 0 10px 0 0 !important; border: 0 !important; outline: 0 !important; background: transparent !important; color: #213630 !important; font: inherit !important; font-size: 1rem !important; box-shadow: none !important; }
+.login-input-wrap input::placeholder { color: #a0aaa6 !important; }
+.login-show-password { height: 40px !important; margin-right: 8px !important; padding: 0 10px !important; border: 0 !important; border-radius: 9px !important; background: transparent !important; color: #22675a !important; font-weight: 800 !important; cursor: pointer !important; }
+.login-submit { min-height: 56px !important; margin-top: 3px !important; padding: 0 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 12px !important; border: 0 !important; border-radius: 14px !important; background: #1f6b5d !important; color: #fff !important; font: inherit !important; font-size: 1rem !important; font-weight: 900 !important; cursor: pointer !important; box-shadow: 0 12px 24px rgba(31,107,93,.2) !important; transition: .18s ease !important; }
+.login-submit:hover { transform: translateY(-1px) !important; background: #185b50 !important; }
+.login-submit:disabled { opacity: .65 !important; cursor: wait !important; transform: none !important; }
+.login-help { margin: 24px 0 0 !important; padding-top: 18px !important; border-top: 1px solid #edf0ee !important; color: #77817e !important; font-size: .84rem !important; line-height: 1.5 !important; }
+.login-help strong { color: #445b55 !important; }
+.api-connection-hint { margin-top: 14px !important; padding: 11px 13px !important; border-radius: 10px !important; background: #fff3dc !important; color: #785416 !important; font-size: .8rem !important; line-height: 1.45 !important; }
+.api-connection-hint.is-hidden { display: none !important; }
+@media (max-width: 760px) {
+  .auth-view.auth-view--clean { padding: 14px !important; place-items: start center !important; }
+  .login-shell { max-width: 500px !important; min-height: 0 !important; grid-template-columns: 1fr !important; border-radius: 22px !important; }
+  .login-intro { display: none !important; }
+  .login-panel { padding: 34px 24px !important; }
+  .login-panel__mobile-brand { margin-bottom: 34px !important; display: flex !important; align-items: center !important; gap: 10px !important; color: #173f3a !important; }
+  .login-panel__mobile-brand span { width: 42px !important; height: 42px !important; display: grid !important; place-items: center !important; border-radius: 12px !important; background: #1f685c !important; color: #fff !important; font-weight: 900 !important; }
+  .login-panel__mobile-brand strong { font-family: "Literata", Georgia, serif !important; font-size: 1.2rem !important; }
+  .login-panel__heading h2 { font-size: 1.9rem !important; }
+}
+:root{--final-green:#1d6659;--final-green-dark:#164b43;--final-bg:#f4f6f3;--final-card:#fff;--final-text:#1d2926;--final-muted:#66736f;--final-line:#dce4e0;--final-gold:#d3a24e;--final-danger:#b64a42;--final-shadow:0 18px 55px rgba(24,64,56,.10)}
+html{background:var(--final-bg)}
+body{font-family:"Segoe UI",Arial,sans-serif!important;color:var(--final-text);background:var(--final-bg);font-size:16px}
+button,input,select,textarea{font:inherit}
+.auth-view.auth-view--clean{min-height:100vh!important;padding:28px!important;display:grid!important;place-items:center!important;background:radial-gradient(circle at 10% 10%,rgba(29,102,89,.09),transparent 30%),radial-gradient(circle at 90% 90%,rgba(211,162,78,.10),transparent 26%),#f4f6f3!important}
+.auth-view.auth-view--clean.is-hidden{display:none!important}
+.login-shell{width:min(100%,980px)!important;min-height:590px!important;display:grid!important;grid-template-columns:.9fr 1.1fr!important;overflow:hidden!important;border:1px solid #dce4e0!important;border-radius:28px!important;background:#fff!important;box-shadow:0 28px 80px rgba(25,68,59,.14)!important}
+.login-intro{padding:48px!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;background:linear-gradient(145deg,#154f46,#237667)!important;color:#fff!important}
+.login-brand{display:flex!important;align-items:center!important;gap:13px!important}
+.login-brand__mark{width:50px!important;height:50px!important;display:grid!important;place-items:center!important;border-radius:15px!important;background:#fff!important;color:#1d6659!important;font-weight:900!important;box-shadow:none!important}
+.login-brand strong{display:block!important;font-family:Georgia,serif!important;font-size:1.35rem!important;color:#fff!important}
+.login-brand small{display:block!important;margin-top:2px!important;color:rgba(255,255,255,.72)!important}
+.login-intro__content{max-width:390px!important}
+.login-kicker{display:inline-flex!important;margin-bottom:14px!important;color:#e8cf9d!important;font-size:.78rem!important;font-weight:800!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+.login-intro h1{margin:0!important;font-family:Georgia,serif!important;color:#fff!important;font-size:clamp(2rem,3.3vw,3rem)!important;line-height:1.08!important;letter-spacing:-.025em!important}
+.login-intro p{margin:16px 0 0!important;color:rgba(255,255,255,.82)!important;font-size:1rem!important;line-height:1.65!important}
+.login-benefits{margin-top:28px!important;display:grid!important;gap:11px!important}
+.login-benefits span{display:flex!important;align-items:center!important;gap:10px!important;color:rgba(255,255,255,.9)!important;font-size:.94rem!important}
+.login-benefits i{width:23px!important;height:23px!important;display:grid!important;place-items:center!important;border-radius:50%!important;background:rgba(255,255,255,.13)!important;color:#f2d08d!important;font-style:normal!important;font-weight:800!important}
+.login-panel{padding:58px 64px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;background:#fff!important}
+.login-panel__heading>span{color:#347569!important;font-size:.76rem!important;font-weight:800!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+.login-panel__heading h2{margin:8px 0 0!important;color:#1a3732!important;font-family:"Segoe UI",Arial,sans-serif!important;font-size:2.15rem!important;line-height:1.15!important;letter-spacing:-.035em!important}
+.login-panel__heading p{margin:10px 0 0!important;color:var(--final-muted)!important;line-height:1.55!important}
+.login-form{margin-top:34px!important;display:grid!important;gap:20px!important}
+.login-field{display:grid!important;gap:8px!important;color:#27443e!important;font-size:.88rem!important;font-weight:750!important}
+.login-input-wrap{min-height:54px!important;display:flex!important;align-items:center!important;border:1.5px solid #cedad5!important;border-radius:14px!important;background:#fbfcfb!important;overflow:hidden!important;transition:.18s ease!important}
+.login-input-wrap:focus-within{border-color:#2d806f!important;background:#fff!important;box-shadow:0 0 0 4px rgba(45,128,111,.10)!important}
+.login-input-wrap>b{width:48px!important;display:grid!important;place-items:center!important;color:#78908a!important;font-size:.85rem!important}
+.login-input-wrap input{min-width:0!important;flex:1!important;height:52px!important;padding:0 12px 0 0!important;border:0!important;outline:0!important;background:transparent!important;color:#21302d!important}
+.login-input-wrap input::placeholder{color:#99a5a1!important}
+.login-show-password{height:36px!important;margin-right:9px!important;padding:0 10px!important;border:0!important;border-radius:9px!important;background:transparent!important;color:#286b5f!important;font-size:.78rem!important;font-weight:800!important;cursor:pointer!important}
+.login-show-password:hover{background:#eef5f2!important}
+.login-submit{min-height:54px!important;margin-top:4px!important;padding:0 20px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:12px!important;border:0!important;border-radius:14px!important;background:linear-gradient(135deg,#1b6658,#267a69)!important;color:#fff!important;font-weight:800!important;cursor:pointer!important;box-shadow:0 12px 24px rgba(29,102,89,.17)!important;transition:.18s ease!important}
+.login-submit:hover{transform:translateY(-1px)!important;box-shadow:0 15px 28px rgba(29,102,89,.21)!important}
+.login-help{margin:22px 0 0!important;color:#7a8582!important;font-size:.82rem!important;line-height:1.5!important;text-align:center!important}
+.login-panel__mobile-brand{display:none!important}
+.app-shell{background:#f5f7f5!important}
+.sidebar{background:#194f46!important;box-shadow:none!important}
+.sidebar__header{border-bottom-color:rgba(255,255,255,.10)!important}
+.sidebar-quick-button{border-radius:12px!important;background:#fff!important;color:#194f46!important;box-shadow:none!important}
+.nav-group-label{color:rgba(255,255,255,.52)!important;font-size:.69rem!important;letter-spacing:.09em!important}
+.nav-item{min-height:44px!important;margin:2px 8px!important;border-radius:10px!important;color:rgba(255,255,255,.82)!important}
+.nav-item:hover,.nav-item.is-active{background:rgba(255,255,255,.11)!important;color:#fff!important}
+.topbar{border-bottom:1px solid var(--final-line)!important;background:rgba(255,255,255,.96)!important;box-shadow:none!important}
+.workspace{background:#f5f7f5!important}
+.panel,.metric-card,.student-card,.book-card,.copy-card,.loan-card,.reservation-card,.school-card,.user-card,.class-card{border:1px solid var(--final-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:0 7px 22px rgba(31,68,60,.05)!important}
+.button,.btn{border-radius:11px!important}
+.button--primary,.btn-primary{background:#1d6659!important;color:#fff!important;box-shadow:none!important}
+.button--primary:hover,.btn-primary:hover{background:#18584d!important}
+input,select,textarea{border-radius:11px!important}
+.page-header h1,.page-header h2,.panel__header h2{letter-spacing:-.02em!important}
+.metric-grid{gap:12px!important}
+.metric-card{padding:18px!important}
+.metric-card strong{font-size:1.75rem!important}
+.table-card{border-radius:16px!important;overflow:hidden!important}
+.notification-panel,.modal-card{border-radius:18px!important;box-shadow:var(--final-shadow)!important}
+@media(max-width:820px){.auth-view.auth-view--clean{padding:16px!important}.login-shell{width:min(100%,520px)!important;min-height:0!important;grid-template-columns:1fr!important;border-radius:22px!important}.login-intro{display:none!important}.login-panel{padding:38px 28px!important}.login-panel__mobile-brand{margin-bottom:30px!important;display:flex!important;align-items:center!important;gap:10px!important;color:#194f46!important}.login-panel__mobile-brand span{width:42px!important;height:42px!important;display:grid!important;place-items:center!important;border-radius:12px!important;background:#1d6659!important;color:#fff!important;font-weight:900!important}.login-panel__heading h2{font-size:1.8rem!important}}
+@media(max-width:520px){.auth-view.auth-view--clean{padding:0!important;place-items:stretch!important;background:#fff!important}.login-shell{width:100%!important;min-height:100vh!important;border:0!important;border-radius:0!important;box-shadow:none!important}.login-panel{padding:34px 22px!important}.login-form{margin-top:28px!important}.login-input-wrap,.login-submit{min-height:52px!important}}

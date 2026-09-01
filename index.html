@@ -26,7 +26,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700;7..72,800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20260627-final">
+  <link rel="stylesheet" href="style.css?v=20260901-v2full-simple-login">
 
 </head>
 
@@ -56,289 +56,79 @@
 
  
 
-  <section id="auth-view" class="auth-view is-hidden">
-
-    <div class="auth-showcase">
-
-      <header class="auth-showcase__header">
-
-        <a class="brand brand--light" href="#" aria-label="BookShare">
-
-          <span class="brand__mark">BS</span>
-
-          <span class="brand__copy">
-
-            <strong>BookShare</strong>
-
-            <small>Biblioteca escolar</small>
-
-          </span>
-
-        </a>
-
-      </header>
-
- 
-
-      <div class="auth-showcase__content">
-
-        <p class="eyebrow eyebrow--light">Biblioteca escolar, sem burocracia</p>
-
-        <h1>Clareza para cuidar de cada livro e de cada aluno.</h1>
-
-        <p class="auth-showcase__lead">
-
-          Um espaço de trabalho direto, acolhedor e confiável para registrar empréstimos,
-
-          acompanhar prazos e manter o acervo sempre organizado.
-
-        </p>
-
- 
-
-        <div class="auth-library-panel" aria-label="Visão geral do BookShare">
-
-          <div class="auth-library-panel__visual" aria-hidden="true">
-
-            <svg viewBox="0 0 420 250" role="img">
-
-              <rect x="18" y="18" width="384" height="214" rx="25" fill="#173f3a"/>
-
-              <circle cx="344" cy="68" r="34" fill="#f1cf8e" opacity=".95"/>
-
-              <path d="M53 176h314" stroke="#d8b071" stroke-width="12" stroke-linecap="round"/>
-
-              <rect x="72" y="78" width="42" height="91" rx="7" fill="#e7a25d"/>
-
-              <rect x="120" y="61" width="38" height="108" rx="7" fill="#79b9aa"/>
-
-              <rect x="164" y="88" width="32" height="81" rx="7" fill="#efcf89"/>
-
-              <rect x="202" y="70" width="44" height="99" rx="7" fill="#9dbedb"/>
-
-              <rect x="252" y="91" width="35" height="78" rx="7" fill="#d697aa"/>
-
-              <path d="M289 115c17-12 31-10 41 0v52c-13-8-27-9-41-4v-48Zm82 0c-17-12-31-10-41 0v52c13-8 27-9 41-4v-48Z" fill="#f8f5ec" stroke="#f8f5ec" stroke-width="3" stroke-linejoin="round"/>
-
-              <path d="M330 115v52" stroke="#173f3a" stroke-width="3" stroke-linecap="round"/>
-
-            </svg>
-
-          </div>
-
-          <div class="auth-library-panel__copy">
-
-            <span>ROTINA MAIS LEVE</span>
-
-            <strong>Menos burocracia. Mais tempo para cuidar da biblioteca.</strong>
-
-            <p>Empréstimos, devoluções e organização do acervo em poucos cliques — pensado para facilitar o trabalho das equipes da rede pública.</p>
-
-          </div>
-
+  <section id="auth-view" class="auth-view auth-view--simple is-hidden">
+    <main class="simple-login">
+      <div class="simple-login__brand" aria-label="BookShare">
+        <span class="simple-login__mark" aria-hidden="true">BS</span>
+        <div>
+          <strong>BookShare</strong>
+          <span>Gestão de Biblioteca Escolar</span>
         </div>
-
- 
-
-<div class="auth-benefits">
-
-          <article>
-
-            <span class="auth-benefits__icon" aria-hidden="true">
-
-              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5h10a3 3 0 0 1 3 3V18H7a3 3 0 0 0-3 3V6.5Z"/><path d="M17 9.5h1a2 2 0 0 1 2 2V18h-3"/><path d="M7 10h6M7 13h5"/></svg>
-
-            </span>
-
-            <div>
-
-              <strong>Empréstimos sem confusão</strong>
-
-              <p>O sistema escolhe o exemplar disponível e atualiza o acervo.</p>
-
-            </div>
-
-          </article>
-
-          <article>
-
-            <span class="auth-benefits__icon" aria-hidden="true">
-
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/><path d="M18.5 5.5 20 4"/></svg>
-
-            </span>
-
-            <div>
-
-              <strong>Atrasos visíveis</strong>
-
-              <p>Acompanhe dias de atraso, contatos e histórico de cobrança.</p>
-
-            </div>
-
-          </article>
-
-          <article>
-
-            <span class="auth-benefits__icon" aria-hidden="true">
-
-              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="12" height="14" rx="2"/><rect x="17" y="8" width="4" height="8" rx="1"/><path d="M7 16h4M6 9h6"/></svg>
-
-            </span>
-
-            <div>
-
-              <strong>Funciona em qualquer tela</strong>
-
-              <p>Computador, tablet e celular com a mesma organização.</p>
-
-            </div>
-
-          </article>
-
-        </div>
-
       </div>
 
- 
-
-      <footer class="auth-showcase__footer">
-
-        <span>BookShare © 2026</span>
-
-        <span>Organização que acompanha cada história</span>
-
-      </footer>
-
-    </div>
-
- 
-
-    <div class="auth-access">
-
-      <form id="login-form" class="login-card" novalidate>
-
-        <div class="login-card__mobile-brand">
-
-          <span class="brand__mark">BS</span>
-
-          <div>
-
-            <strong>BookShare</strong>
-
-            <small>Gestão de Biblioteca</small>
-
-          </div>
-
+      <section class="simple-login__card" aria-labelledby="login-title">
+        <div class="simple-login__heading">
+          <span class="simple-login__welcome">Bem-vinda</span>
+          <h1 id="login-title">Entre na biblioteca</h1>
+          <p>Use seu e-mail e sua senha para acessar o sistema.</p>
         </div>
 
- 
+        <form id="login-form" class="simple-login__form" novalidate>
+          <label class="field simple-login__field">
+            <span class="field__label">E-mail</span>
+            <span class="input-shell simple-login__input">
+              <span class="input-shell__icon" aria-hidden="true">@</span>
+              <input
+                id="login-email"
+                name="email"
+                type="email"
+                autocomplete="username"
+                placeholder="Digite seu e-mail"
+                required
+              >
+            </span>
+            <small class="field__error"></small>
+          </label>
 
-        <div class="login-card__heading">
+          <label class="field simple-login__field">
+            <span class="field__label">Senha</span>
+            <span class="input-shell simple-login__input">
+              <span class="input-shell__icon" aria-hidden="true">●</span>
+              <input
+                id="login-password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Digite sua senha"
+                minlength="6"
+                required
+              >
+              <button id="toggle-password" class="input-shell__action" type="button" aria-label="Mostrar ou ocultar senha">Mostrar</button>
+            </span>
+            <small class="field__error"></small>
+          </label>
 
-          <p class="eyebrow">Acesso autorizado</p>
+          <button id="login-submit" class="button button--primary button--large button--block simple-login__submit" type="submit">
+            <span>Entrar</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
 
-          <h2>Bem-vinda de volta</h2>
-
-          <p>Entre com a conta criada pelo administrador.</p>
-
+        <div class="simple-login__help">
+          <strong>Não consegue entrar?</strong>
+          <span>Peça ao administrador da escola para conferir sua conta ou redefinir sua senha.</span>
         </div>
+      </section>
 
- 
+      <div class="simple-login__features" aria-label="Principais funções do BookShare">
+        <span><b>1</b> Emprestar e devolver livros</span>
+        <span><b>2</b> Consultar alunos e acervo</span>
+        <span><b>3</b> Acompanhar atrasos e reservas</span>
+      </div>
 
-        <label class="field">
-
-          <span class="field__label">E-mail</span>
-
-          <span class="input-shell">
-
-            <span class="input-shell__icon">@</span>
-
-            <input
-
-              id="login-email"
-
-              name="email"
-
-              type="email"
-
-              autocomplete="username"
-
-              placeholder="biblioteca@escola.com"
-
-              required
-
-            >
-
-          </span>
-
-          <small class="field__error"></small>
-
-        </label>
-
- 
-
-        <label class="field">
-
-          <span class="field__label">Senha</span>
-
-          <span class="input-shell">
-
-            <span class="input-shell__icon">●</span>
-
-            <input
-
-              id="login-password"
-
-              name="password"
-
-              type="password"
-
-              autocomplete="current-password"
-
-              placeholder="Digite sua senha"
-
-              minlength="6"
-
-              required
-
-            >
-
-            <button id="toggle-password" class="input-shell__action" type="button" aria-label="Mostrar ou ocultar senha">Mostrar</button>
-
-          </span>
-
-          <small class="field__error"></small>
-
-        </label>
-
- 
-
-        <button id="login-submit" class="button button--primary button--large button--block" type="submit">
-
-          <span>Entrar no BookShare</span>
-
-          <span aria-hidden="true">→</span>
-
-        </button>
-
- 
-
-        <div class="login-help">
-
-          <span>Primeiro acesso ou esqueceu a senha?</span>
-
-          <p>Solicite ao administrador da escola a criação ou redefinição da conta.</p>
-
-        </div>
-
-      </form>
-
-    </div>
-
+      <footer class="simple-login__footer">BookShare • Biblioteca Escolar</footer>
+    </main>
   </section>
-
- 
 
   <div id="app-view" class="app-shell is-hidden">
 
@@ -410,7 +200,7 @@
 
             <span class="nav-item__icon">⌁</span>
 
-            <span>Balcão rápido</span>
+            <span>Atendimento</span>
 
           </button>
 
@@ -451,6 +241,14 @@
             <span class="nav-item__icon">▤</span>
 
             <span>Livros</span>
+
+          </button>
+
+          <button class="nav-item" data-route="exemplares" type="button">
+
+            <span class="nav-item__icon">▥</span>
+
+            <span>Exemplares</span>
 
           </button>
 
@@ -1034,7 +832,7 @@
 
                 </button>
 
-                <button class="quick-action-card admin-only" data-open-modal="book-modal" type="button">
+                <button class="quick-action-card" data-open-modal="book-modal" type="button">
 
                   <span class="quick-action-card__icon">▤</span>
 
@@ -1376,7 +1174,7 @@
 
               <button class="button button--secondary admin-only" id="sync-covers-button" type="button">↻ Atualizar capas</button>
 
-              <button class="button button--primary admin-only" data-open-modal="book-modal" type="button">＋ Cadastrar livro</button>
+              <button class="button button--primary" data-open-modal="book-modal" type="button">＋ Cadastrar livro</button>
 
             </div>
 
@@ -3320,7 +3118,7 @@
 
  
 
-  <script src="script.js?v=20260627-final"></script>
+  <script src="script.js?v=20260901-v2full"></script>
 
 </body>
 

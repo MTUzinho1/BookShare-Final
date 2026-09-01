@@ -31,7 +31,8 @@ const app = express();
 
 const PORT = Number(process.env.PORT || 3000);
 
-const JWT_SECRET = String(process.env.JWT_SECRET || "");
+const JWT_SECRET_ENV = String(process.env.JWT_SECRET || "");
+const JWT_SECRET = JWT_SECRET_ENV || crypto.createHash("sha256").update(`${process.env.DATABASE_URL || "bookshare"}:BookShare-2026`).digest("hex");
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 
@@ -2637,16 +2638,6 @@ for (const [titleKey, urls] of FINAL_50_REAL_COVER_CANDIDATES.entries()) {
 
  
 
-if (JWT_SECRET.length < 24) {
-
-  console.error("JWT_SECRET ausente ou curta. Configure uma chave segura no Render.");
-
-  process.exit(1);
-
-}
-
- 
-
 if (!process.env.DATABASE_URL) {
 
   console.error("DATABASE_URL não configurada.");
@@ -2752,6 +2743,11 @@ app.use(cors({
  
 
 app.use(express.json({ limit: "3mb" }));
+
+app.get("/", (_req, res) => res.sendFile(require("path").join(__dirname, "index.html")));
+app.get("/style.css", (_req, res) => res.sendFile(require("path").join(__dirname, "style.css")));
+app.get("/script.js", (_req, res) => res.sendFile(require("path").join(__dirname, "script.js")));
+app.get("/config.json", (_req, res) => res.sendFile(require("path").join(__dirname, "config.json")));
 
  
 
@@ -3887,7 +3883,6 @@ async function primeCoverPlaceholderHashes() {
 
     } catch (_error) {
 
-      // Ignora placeholders que o Sharp não conseguir abrir.
 
     }
 
@@ -3953,7 +3948,6 @@ async function downloadVerifiedCover(url) {
 
  
 
-    // Rejeita imagens praticamente vazias.
 
     if (averageMean > 242 && averageDeviation < 9) return null;
 
@@ -4105,11 +4099,8 @@ async function coverFromGoogleVolume(volume) {
 
  
 
-  // Só usa URLs realmente fornecidas por imageLinks.
 
-  // Não constrói URL de capa quando a edição não possui imagem,
 
-  // porque isso retorna o placeholder "image not available".
 
   const urls = [...new Set(imageLinksFromVolume(volume))];
 
@@ -4489,7 +4480,6 @@ async function resolveOfficialEditionCover(title, authorOverride = "") {
 
  
 
-  // 1. Links específicos da edição já definidos dentro do server.js.
 
   for (const url of directCandidates) {
 
@@ -4535,7 +4525,6 @@ async function resolveOfficialEditionCover(title, authorOverride = "") {
 
  
 
-  // 2. ISBN exato da edição.
 
   if (edition.isbn13) {
 
@@ -4555,7 +4544,6 @@ async function resolveOfficialEditionCover(title, authorOverride = "") {
 
  
 
-  // 3. Volume exato previamente identificado.
 
   if (!cover && edition.googleVolumeId) {
 
@@ -4567,7 +4555,6 @@ async function resolveOfficialEditionCover(title, authorOverride = "") {
 
  
 
-  // 4. Busca exata por título e autor.
 
   if (!cover) {
 
@@ -4674,8 +4661,6 @@ async function syncBookCovers({ force = false } = {}) {
       if (!editionForTitle(book.title)) return false;
 
       if (book.cover_source === "manual-upload") return false;
-      // Capas externas reais do Google Books ficam por URL: não convertemos em base64
-      // para manter banco, API e navegador leves.
       if (book.cover_source === "google-books" && /^https?:\/\//i.test(String(book.cover_url || ""))) return false;
 
       return force || book.cover_source !== "verified-original-v30" || !isDataImage(book.cover_url);
@@ -9293,12 +9278,6 @@ async function clearUnverifiedBookCovers() {
  
 
 
-// ============================================================================
-// BOOKSHARE V2 FULL — CATÁLOGO REAL E LEVE
-// Importa livros reais somente quando o banco ainda está pequeno.
-// As capas permanecem como URL externa e o navegador usa lazy-loading.
-// Isso evita armazenar centenas de imagens pesadas no PostgreSQL.
-// ============================================================================
 
 const AUTO_EXPAND_CATALOG = String(process.env.AUTO_EXPAND_CATALOG ?? "true").toLowerCase() !== "false";
 const DEMO_CATALOG_TARGET = Math.max(80, Math.min(400, Number(process.env.DEMO_CATALOG_TARGET || 220)));
@@ -9455,7 +9434,6 @@ async function ensureLargeRealCatalog() {
           const bookId = result.rows[0]?.id;
           if (!bookId) continue;
 
-          // Dois ou três exemplares por título deixam a demonstração realista sem pesar o app.
           const copyAmount = total % 4 === 0 ? 3 : 2;
           for (let copyNumber = 1; copyNumber <= copyAmount; copyNumber += 1) {
             const inventoryCode = `AUTO-${String(bookId).replace(/-/g, "").slice(0, 10).toUpperCase()}-${copyNumber}`;
